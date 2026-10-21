@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ALONSO — DATA & SYSTEMS
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/content.css"
+    >
+
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js">
+    </script>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="scanlines"></div>
+
+
+    <header class="site-header">
+
+        <a
+            href="index.html"
+            class="site-logo"
+        >
+
+            ALONSO
+            <span>— DATA & SYSTEMS</span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                <span data-i18n="nav.home">
+                    Inicio
+                </span>
+            </a>
+
+            <a href="index.html#systems">
+                <span data-i18n="nav.systems">
+                    Sistemas
+                </span>
+            </a>
+
+            <a href="index.html#data">
+                <span data-i18n="nav.data">
+                    Datos
+                </span>
+            </a>
+
+            <a href="index.html#lab">
+                <span data-i18n="nav.lab">
+                    Laboratorio
+                </span>
+            </a>
+
+            <a href="index.html#journal">
+                <span data-i18n="nav.journal">
+                    Diario
+                </span>
+            </a>
+
+        </nav>
+
+
+        <div class="language-switcher">
+
+            <button
+                class="language-button active"
+                data-language="es"
+                onclick="ContentEngine.setLanguage('es')"
+            >
+                ES
+            </button>
+
+            <span>/</span>
+
+            <button
+                class="language-button"
+                data-language="en"
+                onclick="ContentEngine.setLanguage('en')"
+            >
+                EN
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <article
+            id="article-content"
+            class="article"
+        >
+
+            <div class="article-loading">
+
+                <span>
+                    INITIALIZING DOCUMENT...
+                </span>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <footer>
+
+        <span>
+            ALONSO — DATA & SYSTEMS
+        </span>
+
+        <span>
+            SYSTEM ONLINE
+        </span>
+
+    </footer>
+
+
+    <script src="js/i18n.js"></script>
+
+    <script src="js/content.js"></script>
+
+</body>
+
+</html>

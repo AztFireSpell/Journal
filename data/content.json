@@ -1,0 +1,80 @@
+{
+    "content": [
+        {
+            "id": "exp-001",
+            "type": "experiment",
+            "category": "LAB",
+            "title": {
+                "es": "Detección de fraude con Transformers",
+                "en": "Fraud Detection with Transformers"
+            },
+            "description": {
+                "es": "Explorando si los patrones temporales pueden mejorar la detección de fraude financiero.",
+                "en": "Exploring whether temporal patterns can improve financial fraud detection."
+            },
+            "date": "2026-08-19",
+            "image": "assets/images/lab/fraud-detection.jpg",
+            "slug": "fraud-detection-transformers",
+            "tags": [
+                "Python",
+                "Machine Learning",
+                "Transformers",
+                "Data Science"
+            ],
+            "status": "complete",
+            "featured": true,
+            "path": "content/lab/fraud-detection-transformers.md"
+        },
+
+        {
+            "id": "journal-001",
+            "type": "journal",
+            "category": "JOURNAL",
+            "title": {
+                "es": "Construyendo mi laboratorio digital",
+                "en": "Building my digital laboratory"
+            },
+            "description": {
+                "es": "Por qué decidí convertir mi portafolio en un espacio para experimentar y documentar.",
+                "en": "Why I decided to turn my portfolio into a place to experiment and document."
+            },
+            "date": "2026-08-18",
+            "image": "assets/images/journal/laboratory.jpg",
+            "slug": "construyendo-mi-laboratorio",
+            "tags": [
+                "Journal",
+                "Web",
+                "Personal"
+            ],
+            "status": "complete",
+            "featured": true,
+            "path": "content/journal/construyendo-mi-laboratorio.md"
+        },
+
+        {
+            "id": "project-001",
+            "type": "project",
+            "category": "PROJECT",
+            "title": {
+                "es": "Sistema de gestión para Moodle",
+                "en": "Moodle Management System"
+            },
+            "description": {
+                "es": "Sistema para automatizar procesos relacionados con usuarios, cursos y cargas de información.",
+                "en": "A system for automating processes related to users, courses and data uploads."
+            },
+            "date": "2026-08-10",
+            "image": "assets/images/projects/moodle.jpg",
+            "slug": "moodle-management-system",
+            "tags": [
+                "Python",
+                "SQLite",
+                "Moodle",
+                "Automation"
+            ],
+            "status": "complete",
+            "featured": true,
+            "path": "content/projects/moodle-management-system.md"
+        }
+    ]
+}
