@@ -92,7 +92,7 @@ button {
 
     z-index: -5;
 
-    opacity: 0.07;
+    opacity: 0.16;
 
     background-image:
         linear-gradient(
@@ -103,15 +103,29 @@ button {
             90deg,
             rgba(140,255,193,.5) 1px,
             transparent 1px
+        ),
+        linear-gradient(
+            rgba(140,255,193,.15) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(140,255,193,.15) 1px,
+            transparent 1px
         );
 
-    background-size: 80px 80px;
+    background-size:
+        120px 120px,
+        120px 120px,
+        30px 30px,
+        30px 30px;
 
     mask-image:
         linear-gradient(
             to bottom,
-            black,
-            transparent 85%
+            black 40%,
+            rgba(0,0,0,0.6) 80%,
+            transparent 100%
         );
 }
 
@@ -120,26 +134,29 @@ button {
 
     position: fixed;
 
-    width: 600px;
+    width: 750px;
 
-    height: 600px;
+    height: 750px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(140,255,193,.07),
-            transparent 70%
+            rgba(140,255,193,.14),
+            rgba(140,255,193,.03) 55%,
+            transparent 75%
         );
 
-    top: -250px;
+    top: -200px;
 
-    right: -200px;
+    right: -150px;
 
     z-index: -4;
 
     pointer-events: none;
+
+    filter: blur(40px);
 }
 
 
@@ -306,6 +323,131 @@ button {
 }
 
 
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+.language-switcher {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    font-family: var(--mono);
+
+    font-size: .65rem;
+
+    color: var(--muted);
+}
+
+
+.language-switcher span {
+
+    color: rgba(140, 255, 193, .25);
+
+    user-select: none;
+}
+
+
+.language-button {
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+
+    font-size: .65rem;
+
+    cursor: pointer;
+
+    padding: 3px 6px;
+
+    letter-spacing: .1em;
+
+    border-radius: 2px;
+
+    transition: color .2s ease, text-shadow .2s ease, background .2s ease;
+}
+
+
+.language-button:hover {
+
+    color: var(--text);
+}
+
+
+.language-button.active {
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    text-shadow: 0 0 10px rgba(140, 255, 193, .5);
+
+    background: rgba(140, 255, 193, .08);
+}
+
+
+.article-back-link {
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: var(--muted);
+
+    font-family: var(--mono);
+
+    font-size: .75rem;
+
+    letter-spacing: .08em;
+
+    text-decoration: none;
+
+    transition: color .2s ease, transform .2s ease;
+}
+
+
+.article-back-link:hover {
+
+    color: var(--accent);
+
+    transform: translateX(-4px);
+}
+
+
+.article-error {
+
+    padding: 80px 0;
+
+    font-family: var(--mono);
+}
+
+
+.article-error span {
+
+    display: block;
+
+    font-size: 4rem;
+
+    color: var(--accent);
+
+    margin-bottom: 10px;
+}
+
+
+
 /* ==========================================================
    GENERAL
 ========================================================== */
@@ -412,6 +554,10 @@ button {
 
     margin-top: 20px;
 
+    color: #ffffff;
+
+    text-shadow: 0 0 40px rgba(140, 255, 193, 0.25);
+
     font-size:
         clamp(
             4rem,
@@ -431,7 +577,11 @@ button {
 
     margin-top: 20px;
 
-    color: var(--muted);
+    color: var(--accent);
+
+    opacity: .95;
+
+    text-shadow: 0 0 20px rgba(140, 255, 193, 0.5);
 
     font-size: .37em;
 
@@ -443,9 +593,13 @@ button {
 
     margin-top: 45px;
 
-    color: var(--muted);
+    color: #f1f5f9;
 
     font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 
@@ -486,14 +640,20 @@ button {
     background: var(--accent);
 
     color: #050806;
+
+    box-shadow: 0 0 25px rgba(140, 255, 193, 0.35);
+
+    font-weight: 700;
 }
 
 
 .secondary {
 
-    border: 1px solid var(--border);
+    border: 1px solid rgba(140, 255, 193, 0.3);
 
-    background: transparent;
+    background: rgba(10, 15, 13, 0.6);
+
+    backdrop-filter: blur(12px);
 
     color: var(--text);
 }
@@ -501,9 +661,11 @@ button {
 
 .secondary:hover {
 
-    background: var(--surface-2);
+    background: rgba(140, 255, 193, 0.15);
 
     color: var(--accent);
+
+    border-color: var(--accent);
 }
 
 
@@ -519,12 +681,16 @@ button {
 
 .system-window {
 
-    border: 1px solid var(--border);
+    border: 1px solid rgba(140, 255, 193, 0.3);
 
     background:
-        rgba(12,15,14,.8);
+        rgba(8, 12, 10, 0.82);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.8),
+        0 0 35px rgba(140, 255, 193, 0.12);
 
     transform:
         rotateY(-8deg)
@@ -583,7 +749,7 @@ button {
 
 
 /* ==========================================================
-   SYSTEMS / SKETCH
+   SYSTEMS / ARCHITECTURAL BLUEPRINT
 ========================================================== */
 
 .systems-section {
@@ -593,6 +759,47 @@ button {
     padding-top: 180px;
 
     padding-bottom: 180px;
+
+    position: relative;
+}
+
+
+/* Blueprint background ambiance */
+.systems-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 40px -40px;
+
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(14, 116, 144, 0.18), transparent 75%),
+        linear-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+
+    background-size: 100% 100%, 36px 36px, 36px 36px;
+
+    border: 1px solid rgba(56, 189, 248, 0.18);
+
+    border-radius: 8px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.systems-section .section-number,
+.systems-section .section-label {
+
+    color: #38bdf8 !important;
+}
+
+
+.systems-section h2 {
+
+    color: #f0f9ff;
 }
 
 
@@ -616,14 +823,43 @@ button {
 
     min-height: 500px;
 
-    padding: 20px;
+    padding: 30px;
 
-    border:
-        1px dashed
-        rgba(140,255,193,.12);
+    border: 1px solid rgba(56, 189, 248, 0.4);
 
     background:
-        rgba(10,12,11,.5);
+        linear-gradient(rgba(10, 32, 60, 0.75), rgba(4, 15, 30, 0.92)),
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12), transparent 50%);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 50px rgba(56, 189, 248, 0.08),
+        0 0 35px rgba(56, 189, 248, 0.2);
+
+    border-radius: 4px;
+}
+
+
+/* Blueprint specification badge */
+.sketch-container::after {
+
+    content: "BLUEPRINT SPEC // SYS-ARCH-001 [SCALE 1:1]";
+
+    position: absolute;
+
+    bottom: 12px;
+
+    right: 18px;
+
+    color: rgba(56, 189, 248, 0.6);
+
+    font-family: var(--mono);
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.15em;
 }
 
 
@@ -635,11 +871,15 @@ button {
 
     left: 20px;
 
-    color: #4e5954;
+    color: #38bdf8;
 
     font-family: var(--mono);
 
-    font-size: .55rem;
+    font-size: .6rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
 }
 
 
@@ -655,51 +895,57 @@ button {
 
 .sketch-node {
 
-    fill: transparent;
+    fill: rgba(12, 38, 70, 0.88);
 
-    stroke: var(--accent);
+    stroke: #38bdf8;
 
-    stroke-width: 1;
+    stroke-width: 1.5;
 
-    opacity: .65;
+    opacity: 1;
+
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
 }
 
 
 .sketch-line {
 
-    stroke: var(--accent);
+    stroke: #38bdf8;
 
-    stroke-width: 1;
+    stroke-width: 1.5;
 
-    opacity: .45;
+    opacity: .85;
 
-    stroke-dasharray: 1000;
-
-    stroke-dashoffset: 1000;
+    stroke-dasharray: 6 4;
 }
 
 
 .sketch-text {
 
-    fill: var(--text-muted);
+    fill: #ffffff !important;
 
     font-family: var(--mono);
 
-    font-size: 14px;
+    font-size: 13px;
+
+    font-weight: 700;
 
     letter-spacing: 2px;
+
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
 }
 
 
 .sketch-question {
 
-    fill: var(--accent);
+    fill: #7dd3fc !important;
 
-    opacity: .5;
+    opacity: 1;
 
     font-family: var(--mono);
 
-    font-size: 10px;
+    font-size: 11px;
+
+    font-weight: 600;
 
     letter-spacing: 3px;
 }
@@ -707,7 +953,7 @@ button {
 
 .systems-copy {
 
-    color: var(--muted);
+    color: #cbd5e1;
 
     font-size: 1rem;
 }
@@ -727,22 +973,22 @@ button {
 
     border-left:
         2px solid
-        var(--accent);
+        #38bdf8;
 
     background:
-        rgba(140,255,193,.03);
+        rgba(56, 189, 248, 0.08);
 
     font-family: var(--mono);
 
     font-size: .7rem;
 
-    color: var(--text);
+    color: #e0f2fe;
 }
 
 
 .hand-note span {
 
-    color: var(--accent);
+    color: #38bdf8;
 }
 
 
@@ -762,9 +1008,11 @@ button {
 
     padding: 6px 9px;
 
-    border: 1px solid var(--border);
+    border: 1px solid rgba(56, 189, 248, 0.35);
 
-    color: #65716c;
+    color: #7dd3fc;
+
+    background: rgba(56, 189, 248, 0.06);
 
     font-family: var(--mono);
 
@@ -773,7 +1021,7 @@ button {
 
 
 /* ==========================================================
-   DATA
+   DATA / SKETCH WIREFRAME & PROTOTYPE
 ========================================================== */
 
 .data-section {
@@ -783,6 +1031,47 @@ button {
     padding-top: 180px;
 
     padding-bottom: 180px;
+
+    position: relative;
+}
+
+
+/* Sketch graph-paper ambiance */
+.data-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 40px -40px;
+
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.08), transparent 75%),
+        linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+
+    background-size: 100% 100%, 28px 28px, 28px 28px;
+
+    border: 1px dashed rgba(245, 158, 11, 0.22);
+
+    border-radius: 6px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.data-section .section-number,
+.data-section .section-label {
+
+    color: #f59e0b !important;
+}
+
+
+.data-section h2 {
+
+    color: #fef3c7;
 }
 
 
@@ -800,9 +1089,15 @@ button {
 
 .prototype-terminal {
 
-    border: 1px solid var(--border);
+    border: 1px dashed rgba(245, 158, 11, 0.35);
 
-    background: var(--surface);
+    background: rgba(18, 14, 8, 0.75);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.7),
+        inset 0 0 30px rgba(245, 158, 11, 0.04);
 
     min-height: 400px;
 }
@@ -816,9 +1111,9 @@ button {
 
     padding: 14px 18px;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
 
-    color: var(--muted);
+    color: #f59e0b;
 
     font-family: var(--mono);
 
@@ -840,17 +1135,19 @@ button {
 
     padding: 20px 0;
 
-    border-bottom: 1px solid rgba(140,255,193,.07);
+    border-bottom: 1px dashed rgba(245, 158, 11, 0.18);
 }
 
 
 .dataset-info span {
 
-    color: #4e5954;
+    color: #d97706;
 
     font-family: var(--mono);
 
-    font-size: .55rem;
+    font-size: .6rem;
+
+    font-weight: 600;
 }
 
 
@@ -858,11 +1155,13 @@ button {
 
     margin-top: 5px;
 
-    color: var(--accent);
+    color: #fef3c7;
 
     font-family: var(--mono);
 
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+
+    text-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
 }
 
 
@@ -874,7 +1173,11 @@ button {
 
     padding: 30px;
 
-    border: 1px dashed var(--border);
+    border: 1px dashed rgba(245, 158, 11, 0.3);
+
+    background: rgba(16, 12, 8, 0.55);
+
+    backdrop-filter: blur(10px);
 
     display: flex;
 
@@ -894,15 +1197,17 @@ button {
 
     text-align: center;
 
-    border: 1px solid var(--border);
+    border: 1px dashed rgba(245, 158, 11, 0.35);
 
-    background: var(--surface);
+    background: rgba(245, 158, 11, 0.04);
 
-    color: var(--muted);
+    color: #fde68a;
 
     font-family: var(--mono);
 
-    font-size: .6rem;
+    font-size: .62rem;
+
+    letter-spacing: .08em;
 
     transition:
         border-color .4s ease,
@@ -913,21 +1218,27 @@ button {
 
 .pipeline-node.active {
 
-    color: var(--accent);
+    color: #ffffff;
 
-    border-color: var(--accent);
+    border: 1px solid #f59e0b;
+
+    background: rgba(245, 158, 11, 0.2);
 
     box-shadow:
         0 0 25px
-        rgba(140,255,193,.08);
+        rgba(245, 158, 11, .35);
+
+    font-weight: 700;
 }
 
 
 .pipeline-arrow {
 
-    color: #4f5c56;
+    color: #f59e0b;
 
     padding: 8px;
+
+    font-weight: 700;
 }
 
 
@@ -941,13 +1252,13 @@ button {
 
     padding: 25px;
 
-    border: 1px solid var(--border);
+    border: 1px dashed rgba(245, 158, 11, 0.3);
 
-    background: #050706;
+    background: rgba(10, 8, 6, 0.9);
 
     font-family: var(--mono);
 
-    font-size: .7rem;
+    font-size: .75rem;
 }
 
 
@@ -1001,13 +1312,71 @@ button {
 
 .lab-intro {
 
-    margin-bottom: 50px;
+    background: rgba(8, 14, 11, 0.85);
 
-    color: var(--muted);
+    border: 1px solid rgba(140, 255, 193, 0.25);
+
+    border-left: 3px solid var(--accent);
+
+    padding: 16px 22px;
+
+    border-radius: 4px;
+
+    backdrop-filter: blur(12px);
+
+    margin-bottom: 50px;
 
     font-family: var(--mono);
 
-    font-size: .7rem;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.5),
+        0 0 20px rgba(140, 255, 193, 0.06);
+}
+
+
+.lab-log-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 6px 0;
+
+    font-size: 0.82rem;
+
+    color: #e2e8f0;
+}
+
+
+.lab-log-hidden {
+
+    display: none !important;
+}
+
+
+.lab-log-badge {
+
+    background: rgba(140, 255, 193, 0.15);
+
+    color: var(--accent);
+
+    padding: 2px 6px;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    border-radius: 2px;
+}
+
+
+.lab-sql-query {
+
+    color: #a7f3d0;
+
+    font-weight: 600;
 }
 
 
@@ -1015,7 +1384,161 @@ button {
 
     color: var(--accent);
 
-    margin-right: 10px;
+    margin-right: 5px;
+}
+
+
+.experiment-card-dev {
+
+    border-color: rgba(140, 255, 193, 0.45) !important;
+
+    background: linear-gradient(135deg, rgba(140, 255, 193, 0.08) 0%, rgba(10, 18, 14, 0.95) 100%) !important;
+
+    box-shadow: 0 0 25px rgba(140, 255, 193, 0.15), 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+
+    position: relative;
+}
+
+
+.dev-banner {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 4px 10px;
+
+    margin-bottom: 16px;
+
+    background: rgba(140, 255, 193, 0.15);
+
+    border: 1px solid rgba(140, 255, 193, 0.35);
+
+    border-radius: 20px;
+
+    font-family: var(--mono);
+
+    font-size: 0.62rem;
+
+    color: var(--accent);
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.dev-pulse {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow: 0 0 8px var(--accent);
+
+    animation: pulse 1.5s infinite;
+}
+
+
+.dev-progress-bar {
+
+    width: 100%;
+
+    height: 4px;
+
+    background: rgba(140, 255, 193, 0.12);
+
+    border-radius: 2px;
+
+    margin: 18px 0;
+
+    overflow: hidden;
+}
+
+
+.dev-progress-fill {
+
+    height: 100%;
+
+    background: linear-gradient(90deg, #38bdf8, #8cffc1);
+
+    box-shadow: 0 0 10px #8cffc1;
+
+    border-radius: 2px;
+
+    animation: progressGlow 2s infinite ease-in-out;
+}
+
+
+@keyframes progressGlow {
+
+    0%, 100% { opacity: 0.85; }
+
+    50% { opacity: 1; filter: drop-shadow(0 0 6px #8cffc1); }
+}
+
+
+.status-badge.dev {
+
+    color: #38bdf8;
+
+    background: rgba(56, 189, 248, 0.12);
+
+    padding: 2px 6px;
+
+    border-radius: 2px;
+
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+
+.lab-more-action {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 55px;
+}
+
+
+.lab-more-action .button {
+
+    padding: 14px 28px;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.1em;
+
+    border: 1px solid rgba(140, 255, 193, 0.35);
+
+    background: rgba(10, 18, 14, 0.65);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 2px;
+
+    color: var(--text);
+
+    transition: all 0.3s ease;
+}
+
+
+.lab-more-action .button:hover {
+
+    border-color: var(--accent);
+
+    background: rgba(140, 255, 193, 0.12);
+
+    box-shadow: 0 0 25px rgba(140, 255, 193, 0.25);
+
+    transform: translateY(-3px);
 }
 
 
@@ -2167,6 +2690,4 @@ button {
         );
 
     filter: blur(10px);
-}
-
 }

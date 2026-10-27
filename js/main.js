@@ -603,6 +603,39 @@ gsap.to(
    LAB
 ========================================================== */
 
+let labSequenceRun = false;
+
+function runLabTerminalSequence() {
+    if (labSequenceRun) return;
+    labSequenceRun = true;
+
+    const step2 = document.getElementById("lab-log-step-2");
+    const step3 = document.getElementById("lab-log-step-3");
+    const countText = document.getElementById("lab-count-text");
+
+    const total = window.JOURNAL_CONTENT?.content?.length || 3;
+    const isEs = (localStorage.getItem("language") || "es") === "es";
+
+    if (countText) {
+        countText.textContent = isEs
+            ? `${total} proyectos encontrados en el sistema.`
+            : `${total} projects indexed in the system.`;
+    }
+
+    setTimeout(() => {
+        if (step2) {
+            step2.classList.remove("lab-log-hidden");
+            gsap.fromTo(step2, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 });
+        }
+        setTimeout(() => {
+            if (step3) {
+                step3.classList.remove("lab-log-hidden");
+                gsap.fromTo(step3, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 });
+            }
+        }, 550);
+    }, 650);
+}
+
 const labTimeline =
     gsap.timeline({
 
@@ -610,7 +643,9 @@ const labTimeline =
 
             trigger: "#lab",
 
-            start: "top 65%",
+            start: "top 70%",
+
+            onEnter: () => runLabTerminalSequence(),
 
             toggleActions:
                 "play none none reverse"

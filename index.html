@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -60,29 +60,55 @@
         <nav class="navigation">
 
             <a href="#systems">
-                SYSTEMS
+                <span data-i18n="nav.systems">SISTEMAS</span>
             </a>
 
             <a href="#data">
-                DATA
+                <span data-i18n="nav.data">DATOS</span>
             </a>
 
             <a href="#lab">
-                LAB
+                <span data-i18n="nav.lab">LABORATORIO</span>
             </a>
 
             <a href="#journal">
-                JOURNAL
+                <span data-i18n="nav.journal">DIARIO</span>
             </a>
 
         </nav>
 
 
-        <div class="nav-status">
+        <div class="nav-right">
 
-            <span class="status-dot"></span>
+            <div class="nav-status">
 
-            SISTEMAS EN LÍNEA
+                <span class="status-dot"></span>
+
+                <span data-i18n="nav.status">SISTEMAS EN LÍNEA</span>
+
+            </div>
+
+            <div class="language-switcher">
+
+                <button
+                    class="language-button active"
+                    data-language="es"
+                    onclick="ContentEngine.setLanguage('es')"
+                >
+                    ES
+                </button>
+
+                <span>/</span>
+
+                <button
+                    class="language-button"
+                    data-language="en"
+                    onclick="ContentEngine.setLanguage('en')"
+                >
+                    EN
+                </button>
+
+            </div>
 
         </div>
 
@@ -106,7 +132,7 @@
 
                 <div class="terminal-label">
 
-                    <span>
+                    <span data-i18n="hero.prompt">
                         ALONSO@DATA-SYSTEMS
                     </span>
 
@@ -128,26 +154,26 @@
                 </h1>
 
 
-                <p class="hero-description">
+                <p class="hero-description" data-i18n="hero.desc">
 
-                    Building systems.<br>
+                    Construyendo Sistemas.<br>
 
-                    Understanding data.<br>
+                    Entendiendo los Datos.<br>
 
-                    Exploring what comes next.
+                    Explorando qué viene a continuación.
 
                 </p>
 
 
                 <div class="hero-actions">
 
-                    <a href="#lab" class="button primary">
-                        ENTER LAB
+                    <a href="#lab" class="button primary" data-i18n="hero.btnLab">
+                        Entrar al Laboratorio
                     </a>
 
 
-                    <button id="hero-cli" class="button secondary">
-                        OPEN CLI
+                    <button id="hero-cli" class="button secondary" data-i18n="hero.btnCli">
+                        Abrir CLI
                     </button>
 
                 </div>
@@ -163,7 +189,7 @@
 
                     <div class="window-header">
 
-                        <span>
+                        <span data-i18n="hero.sysStatus">
                             system.status
                         </span>
 
@@ -178,26 +204,22 @@
 
                         <p>
                             <span>10:42:01</span>
-                            SYSTEM
-                            <strong>INITIALIZED</strong>
+                            <span data-i18n="hero.logInit">SISTEMA <strong>INICIALIZADO</strong></span>
                         </p>
 
                         <p>
                             <span>10:42:03</span>
-                            DATA
-                            <strong>READY</strong>
+                            <span data-i18n="hero.logData">DATOS <strong>LISTOS</strong></span>
                         </p>
 
                         <p>
                             <span>10:42:05</span>
-                            ML
-                            <strong>EXPERIMENTAL</strong>
+                            <span data-i18n="hero.logMl">ML <strong>EXPERIMENTAL</strong></span>
                         </p>
 
                         <p>
                             <span>10:42:07</span>
-                            STATUS
-                            <strong>ONLINE</strong>
+                            <span data-i18n="hero.logStatus">ESTADO <strong>EN LÍNEA</strong></span>
                         </p>
 
                     </div>
@@ -224,12 +246,12 @@
 
                 <div>
 
-                    <div class="section-label">
-                        SYSTEMS
+                    <div class="section-label" data-i18n="systems.label">
+                        SISTEMAS
                     </div>
 
-                    <h2>
-                        Understanding how things work.
+                    <h2 data-i18n="systems.title">
+                        Comprendiendo cómo funcionan las cosas.
                     </h2>
 
                 </div>
@@ -246,8 +268,8 @@
 
                 <div class="sketch-container">
 
-                    <div class="sketch-label">
-                        SYSTEM / ARCHITECTURE / 001
+                    <div class="sketch-label" data-i18n="systems.archLabel">
+                        SISTEMA / ARQUITECTURA / 001
                     </div>
 
 
@@ -257,8 +279,8 @@
 
                         <rect class="sketch-node" x="300" y="30" width="200" height="60" rx="2" />
 
-                        <text x="400" y="66" text-anchor="middle" class="sketch-text">
-                            USER
+                        <text x="400" y="66" text-anchor="middle" class="sketch-text" data-i18n="systems.user">
+                            USUARIO
                         </text>
 
 
@@ -271,7 +293,7 @@
 
                         <rect class="sketch-node" x="300" y="150" width="200" height="60" rx="2" />
 
-                        <text x="400" y="186" text-anchor="middle" class="sketch-text">
+                        <text x="400" y="186" text-anchor="middle" class="sketch-text" data-i18n="systems.api">
                             API
                         </text>
 
@@ -289,8 +311,8 @@
 
                         <rect class="sketch-node" x="100" y="300" width="240" height="60" />
 
-                        <text x="220" y="336" text-anchor="middle" class="sketch-text">
-                            DATABASE
+                        <text x="220" y="336" text-anchor="middle" class="sketch-text" data-i18n="systems.db">
+                            BASE DE DATOS
                         </text>
 
 
@@ -298,8 +320,8 @@
 
                         <rect class="sketch-node" x="460" y="300" width="240" height="60" />
 
-                        <text x="580" y="336" text-anchor="middle" class="sketch-text">
-                            SERVICE
+                        <text x="580" y="336" text-anchor="middle" class="sketch-text" data-i18n="systems.service">
+                            SERVICIO
                         </text>
 
 
@@ -312,8 +334,8 @@
 
                         <!-- QUESTION -->
 
-                        <text x="400" y="430" text-anchor="middle" class="sketch-question">
-                            HOW DOES EVERYTHING CONNECT?
+                        <text x="400" y="430" text-anchor="middle" class="sketch-question" data-i18n="systems.question">
+                            ¿CÓMO SE CONECTA TODO?
                         </text>
 
                     </svg>
@@ -325,32 +347,31 @@
 
                 <div class="systems-copy">
 
-                    <div class="hand-note">
+                    <div class="hand-note" data-i18n="systems.idea">
 
                         <span>
                             idea:
                         </span>
 
-                        Understand the system
-                        before trying to optimize it.
+                        Entender el sistema antes de intentar optimizarlo.
 
                     </div>
 
 
-                    <p>
+                    <p data-i18n="systems.p1">
 
-                        My background started with systems,
-                        technical support, backend development,
-                        databases and infrastructure.
+                        Mi trayectoria comenzó en sistemas:
+                        soporte técnico, desarrollo backend,
+                        bases de datos e infraestructura.
 
                     </p>
 
 
-                    <p>
+                    <p data-i18n="systems.p2">
 
-                        Before thinking about models or
-                        algorithms, I learned to think about
-                        the systems that make them possible.
+                        Antes de pensar en modelos o
+                        algoritmos, aprendí a pensar en los
+                        sistemas que los hacen posibles.
 
                     </p>
 
@@ -391,12 +412,12 @@
 
                 <div>
 
-                    <div class="section-label">
-                        DATA
+                    <div class="section-label" data-i18n="data.label">
+                        DATOS
                     </div>
 
-                    <h2>
-                        Turning information into understanding.
+                    <h2 data-i18n="data.title">
+                        Transformando información en comprensión.
                     </h2>
 
                 </div>
@@ -428,7 +449,7 @@
 
                         <div class="dataset-info">
 
-                            <span>
+                            <span data-i18n="data.dataset">
                                 DATASET
                             </span>
 
@@ -441,8 +462,8 @@
 
                         <div class="dataset-info">
 
-                            <span>
-                                RECORDS
+                            <span data-i18n="data.records">
+                                REGISTROS
                             </span>
 
                             <strong class="counter" data-target="6362620">
@@ -454,8 +475,8 @@
 
                         <div class="dataset-info">
 
-                            <span>
-                                FEATURES
+                            <span data-i18n="data.features">
+                                VARIABLES
                             </span>
 
                             <strong class="counter" data-target="9">
@@ -467,8 +488,8 @@
 
                         <div class="dataset-info">
 
-                            <span>
-                                SEQUENCE
+                            <span data-i18n="data.sequence">
+                                SECUENCIA
                             </span>
 
                             <strong>
@@ -487,23 +508,23 @@
 
                 <div class="pipeline">
 
-                    <div class="pipeline-node">
-                        RAW DATA
+                    <div class="pipeline-node" data-i18n="data.pipeRaw">
+                        DATOS CRUDOS
                     </div>
 
                     <div class="pipeline-arrow">
                         ↓
                     </div>
 
-                    <div class="pipeline-node">
-                        CLEANING
+                    <div class="pipeline-node" data-i18n="data.pipeClean">
+                        LIMPIEZA
                     </div>
 
                     <div class="pipeline-arrow">
                         ↓
                     </div>
 
-                    <div class="pipeline-node">
+                    <div class="pipeline-node" data-i18n="data.pipeFeat">
                         FEATURES
                     </div>
 
@@ -511,16 +532,16 @@
                         ↓
                     </div>
 
-                    <div class="pipeline-node">
-                        SEQUENCES
+                    <div class="pipeline-node" data-i18n="data.pipeSeq">
+                        SECUENCIAS
                     </div>
 
                     <div class="pipeline-arrow">
                         ↓
                     </div>
 
-                    <div class="pipeline-node active">
-                        MODEL
+                    <div class="pipeline-node active" data-i18n="data.pipeModel">
+                        MODELO
                     </div>
 
                 </div>
@@ -581,12 +602,12 @@
 
                 <div>
 
-                    <div class="section-label">
-                        LAB
+                    <div class="section-label" data-i18n="lab.label">
+                        LABORATORIO
                     </div>
 
-                    <h2>
-                        Things I'm trying to understand.
+                    <h2 data-i18n="lab.title">
+                        Cosas que intento comprender.
                     </h2>
 
                 </div>
@@ -594,15 +615,22 @@
             </div>
 
 
-            <div class="lab-intro">
+            <div class="lab-intro" id="lab-terminal-log">
 
-                <span class="lab-prompt">
-                    alonso@lab:~$
-                </span>
+                <div class="lab-log-line" id="lab-log-step-1">
+                    <span class="lab-prompt">alonso@lab:~$</span>
+                    <span class="typing-text" id="lab-status-text" data-i18n="lab.loading">cargando experimentos...</span>
+                </div>
 
-                <span class="typing-text">
-                    loading experiments...
-                </span>
+                <div class="lab-log-line lab-log-hidden" id="lab-log-step-2">
+                    <span class="lab-log-badge">[OK]</span>
+                    <span id="lab-count-text">3 proyectos encontrados en el sistema.</span>
+                </div>
+
+                <div class="lab-log-line lab-log-hidden" id="lab-log-step-3">
+                    <span class="lab-prompt">alonso@lab:~$</span>
+                    <span class="lab-sql-query">SELECT * FROM lab_projects ORDER BY status = 'in_development' DESC LIMIT 3;</span>
+                </div>
 
             </div>
 
@@ -610,9 +638,71 @@
             <div class="experiment-grid">
 
 
+                <!-- PROYECTO EN DESARROLLO -->
+
+                <article class="experiment-card experiment-card-dev" data-index="01">
+
+                    <div class="dev-banner">
+                        <span class="dev-pulse"></span>
+                        <span data-i18n="lab.inDev">EN DESARROLLO · ACTIVE SPRINT</span>
+                    </div>
+
+                    <div class="experiment-top">
+
+                        <span>
+                            PROJECT-001
+                        </span>
+
+                        <span class="status-badge dev" data-i18n="lab.statusDev">
+                            EN PROGRESO (85%)
+                        </span>
+
+                    </div>
+
+
+                    <h3 data-i18n="lab.proj1Title">
+                        Sistema de gestión para Moodle
+                    </h3>
+
+
+                    <p data-i18n="lab.proj1Desc">
+                        Automatización de procesos para sincronización masiva de usuarios, analítica de cursos y base de datos local SQLite.
+                    </p>
+
+                    <div class="dev-progress-bar">
+                        <div class="dev-progress-fill" style="width: 85%;"></div>
+                    </div>
+
+
+                    <div class="experiment-footer">
+
+                        <span>
+                            PYTHON
+                        </span>
+
+                        <span>
+                            SQLITE
+                        </span>
+
+                        <span>
+                            REST API
+                        </span>
+
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <a href="article.html?slug=moodle-management-system" class="content-card-link" data-i18n="lab.viewProj">
+                            Ver detalles del proyecto →
+                        </a>
+                    </div>
+
+                </article>
+
+
+
                 <!-- EXP 001 -->
 
-                <article class="experiment-card" data-index="01">
+                <article class="experiment-card" data-index="02">
 
                     <div class="experiment-top">
 
@@ -620,24 +710,20 @@
                             EXP-001
                         </span>
 
-                        <span>
-                            COMPLETED
+                        <span data-i18n="lab.completed">
+                            COMPLETADO
                         </span>
 
                     </div>
 
 
-                    <h3>
-                        Fraud Detection
-                        with Transformers
+                    <h3 data-i18n="lab.exp1Title">
+                        Detección de fraude con Transformers
                     </h3>
 
 
-                    <p>
-
-                        Exploring temporal patterns in financial
-                        transactions using Transformer architectures.
-
+                    <p data-i18n="lab.exp1Desc">
+                        Explorando patrones temporales en transacciones financieras usando arquitecturas Transformer.
                     </p>
 
 
@@ -698,55 +784,55 @@
 
                     </div>
 
+                    <div style="margin-top: 15px;">
+                        <a href="article.html?slug=fraud-detection-transformers" class="content-card-link" data-i18n="lab.viewExp">
+                            Ver experimento →
+                        </a>
+                    </div>
+
                 </article>
 
 
 
-                <!-- EXP 002 -->
+                <!-- JOURNAL 001 -->
 
-                <article
-    class="experiment-card"
-    data-index="02"
->
+                <article class="experiment-card" data-index="03">
 
                     <div class="experiment-top">
 
                         <span>
-                            EXP-002
+                            JOURNAL-001
                         </span>
 
-                        <span>
-                            EXPERIMENTAL
+                        <span data-i18n="lab.published">
+                            PUBLICADO
                         </span>
 
                     </div>
 
 
-                    <h3>
-                        Sentiment Analysis
+                    <h3 data-i18n="lab.jour1Title">
+                        Construyendo mi laboratorio digital
                     </h3>
 
 
-                    <p>
-
-                        Exploring natural language,
-                        sentiment and text analysis.
-
+                    <p data-i18n="lab.jour1Desc">
+                        Por qué decidí convertir mi portafolio en un espacio para experimentar, documentar y reflexionar.
                     </p>
 
 
                     <div class="experiment-visual">
 
-                        <div class="bar" style="--value: 78%;">
+                        <div class="bar" style="--value: 95%;">
                         </div>
 
-                        <div class="bar" style="--value: 42%;">
+                        <div class="bar" style="--value: 80%;">
                         </div>
 
-                        <div class="bar" style="--value: 91%;">
+                        <div class="bar" style="--value: 88%;">
                         </div>
 
-                        <div class="bar" style="--value: 63%;">
+                        <div class="bar" style="--value: 70%;">
                         </div>
 
                     </div>
@@ -755,81 +841,33 @@
                     <div class="experiment-footer">
 
                         <span>
-                            PYTHON
+                            WEB
                         </span>
 
                         <span>
-                            NLP
+                            ARCHITECTURE
                         </span>
 
+                        <span>
+                            SYSTEMS
+                        </span>
+
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <a href="article.html?slug=construyendo-mi-laboratorio" class="content-card-link" data-i18n="lab.viewJour">
+                            Leer entrada del diario →
+                        </a>
                     </div>
 
                 </article>
 
+            </div>
 
-
-                <!-- EXP 003 -->
-
-                <article
-    class="experiment-card"
-    data-index="03"
->
-
-                    <div class="experiment-top">
-
-                        <span>
-                            EXP-003
-                        </span>
-
-                        <span>
-                            EXPLORING
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Monte Carlo
-                        Simulation
-                    </h3>
-
-
-                    <p>
-
-                        Exploring probability, simulation
-                        and computational experimentation.
-
-                    </p>
-
-
-                    <div class="simulation">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
-
-                    <div class="experiment-footer">
-
-                        <span>
-                            PYTHON
-                        </span>
-
-                        <span>
-                            STATISTICS
-                        </span>
-
-                    </div>
-
-                </article>
-
+            <div class="lab-more-action">
+                <a href="#latest" class="button secondary" data-i18n="lab.viewMore">
+                    ↓ Explorar más proyectos y archivo completo
+                </a>
             </div>
 
         </section>
@@ -837,67 +875,69 @@
 
 
         <!-- =================================================
-             JOURNAL
+             LATEST / ARCHIVE
         ================================================== -->
 
-
         <section
-    id="latest"
-    class="section latest-section"
->
+            id="latest"
+            class="section latest-section"
+        >
 
-    <div class="section-heading">
+            <div class="section-heading">
 
-        <span class="section-number">
-            04
-        </span>
+                <span class="section-number">
+                    04
+                </span>
 
-        <div>
+                <div>
 
-            <p class="eyebrow">
-                ARCHIVE
-            </p>
+                    <p class="eyebrow" data-i18n="home.archive">
+                        ARCHIVO
+                    </p>
 
-            <h2 data-i18n="home.latest">
-                Últimas entradas
-            </h2>
+                    <h2 data-i18n="home.latest">
+                        Últimas entradas
+                    </h2>
 
-        </div>
+                </div>
 
-    </div>
+            </div>
 
 
-    <div
-        id="latest-content"
-        class="content-grid"
-    >
+            <div
+                id="latest-content"
+                class="content-grid"
+            >
 
-        <div class="content-loading">
+                <div class="content-loading" data-i18n="home.loading">
+                    CARGANDO CONTENIDO...
+                </div>
 
-            LOADING CONTENT...
+            </div>
 
-        </div>
+        </section>
 
-    </div>
 
-</section>
+        <!-- =================================================
+             JOURNAL
+        ================================================== -->
 
         <section id="journal" class="section journal-section">
 
             <div class="section-heading">
 
                 <div class="section-number">
-                    04
+                    05
                 </div>
 
                 <div>
 
-                    <div class="section-label">
-                        JOURNAL
+                    <div class="section-label" data-i18n="journal.label">
+                        DIARIO
                     </div>
 
-                    <h2>
-                        Build. Experiment. Document. Reflect.
+                    <h2 data-i18n="journal.title">
+                        Construir. Experimentar. Documentar. Reflexionar.
                     </h2>
 
                 </div>
@@ -913,22 +953,19 @@
                 <article class="journal-entry">
 
                     <span>
-                        2026.08.10
+                        2026.08.18
                     </span>
 
-                    <h3>
-                        Building my personal laboratory.
+                    <h3 data-i18n="journal.entry1Title">
+                        Construyendo mi laboratorio personal.
                     </h3>
 
-                    <p>
-
-                        Why I decided to stop building another
-                        portfolio and start building a laboratory.
-
+                    <p data-i18n="journal.entry1Desc">
+                        Por qué decidí dejar de hacer otro portafolio genérico y construir un laboratorio digital.
                     </p>
 
-                    <a href="#">
-                        READ ENTRY →
+                    <a href="article.html?slug=construyendo-mi-laboratorio" data-i18n="journal.entry1Read">
+                        LEER ENTRADA →
                     </a>
 
                 </article>
@@ -936,17 +973,16 @@
 
                 <article class="journal-entry">
 
-                    <span>
-                        NEXT ENTRY
+                    <span data-i18n="journal.entry2Next">
+                        PRÓXIMA ENTRADA
                     </span>
 
-                    <h3>
-                        What six years of technical support
-                        taught me about systems.
+                    <h3 data-i18n="journal.entry2Title">
+                        Lo que seis años de soporte técnico me enseñaron sobre sistemas.
                     </h3>
 
-                    <a href="#">
-                        COMING SOON →
+                    <a href="#" data-i18n="journal.entry2Soon">
+                        PRÓXIMAMENTE →
                     </a>
 
                 </article>
@@ -1000,12 +1036,12 @@
 
             <div id="terminal-output" class="terminal-output">
 
-                <div class="terminal-system">
-                    GRAPHICS INTERRUPTED
+                <div class="terminal-system" data-i18n="cli.interrupted">
+                    GRÁFICOS INTERRUMPIDOS
                 </div>
 
-                <div>
-                    Stopping graphical interface...
+                <div data-i18n="cli.stopping">
+                    Deteniendo interfaz gráfica...
                     <span class="loading-dots">...</span>
                 </div>
 
@@ -1015,16 +1051,14 @@
                     ALONSO — DATA &amp; SYSTEMS
                 </div>
 
-                <div>
-                    CLI interface initialized.
+                <div data-i18n="cli.initialized">
+                    Interfaz CLI inicializada.
                 </div>
 
                 <br>
 
-                <div>
-                    Type
-                    <strong>help</strong>
-                    to see available commands.
+                <div data-i18n="cli.helpHint">
+                    Escribe <strong>help</strong> para ver los comandos disponibles.
                 </div>
 
                 <br>
@@ -1044,15 +1078,9 @@
             </div>
 
 
-            <div class="cli-footer">
+            <div class="cli-footer" data-i18n="cli.footerHint">
 
-                GRAPHICS INTERRUPTED ·
-
-                type
-                <strong>exit</strong>
-                or
-                <strong>gui</strong>
-                to restore the graphical interface.
+                GRÁFICOS INTERRUMPIDOS · escribe <strong>exit</strong> o <strong>gui</strong> para restaurar la interfaz.
 
             </div>
 
@@ -1072,8 +1100,8 @@
             ALONSO@DATA-SYSTEMS
         </span>
 
-        <span>
-            BUILT WITH HTML · CSS · JAVASCRIPT · CURIOSITY
+        <span data-i18n="footer.built">
+            CONSTRUIDO CON HTML · CSS · JAVASCRIPT · CURIOSIDAD
         </span>
 
         <span>
@@ -1086,6 +1114,9 @@
 
     <script src="js/main.js"></script>
     <script src="js/terminal.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="data/content-data.js"></script>
+    <script src="js/content.js"></script>
 
 </body>
 

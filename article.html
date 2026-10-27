@@ -1,159 +1,94 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALONSO — DATA &amp; SYSTEMS</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/content.css">
 
-    <title>
-        ALONSO — DATA & SYSTEMS
-    </title>
-
-
-    <link
-        rel="stylesheet"
-        href="css/main.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/content.css"
-    >
-
-
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js">
-    </script>
-
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
-    </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-
 
 <body>
 
     <div class="scanlines"></div>
+    <div class="background-grid"></div>
 
-
-    <header class="site-header">
-
-        <a
-            href="index.html"
-            class="site-logo"
-        >
-
-            ALONSO
-            <span>— DATA & SYSTEMS</span>
-
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-symbol">&gt;_</span>
+            <span>ALONSO</span>
         </a>
 
-
-        <nav>
-
+        <nav class="navigation">
             <a href="index.html">
-                <span data-i18n="nav.home">
-                    Inicio
-                </span>
+                <span data-i18n="nav.home">INICIO</span>
             </a>
-
             <a href="index.html#systems">
-                <span data-i18n="nav.systems">
-                    Sistemas
-                </span>
+                <span data-i18n="nav.systems">SISTEMAS</span>
             </a>
-
             <a href="index.html#data">
-                <span data-i18n="nav.data">
-                    Datos
-                </span>
+                <span data-i18n="nav.data">DATOS</span>
             </a>
-
             <a href="index.html#lab">
-                <span data-i18n="nav.lab">
-                    Laboratorio
-                </span>
+                <span data-i18n="nav.lab">LABORATORIO</span>
             </a>
-
             <a href="index.html#journal">
-                <span data-i18n="nav.journal">
-                    Diario
-                </span>
+                <span data-i18n="nav.journal">DIARIO</span>
             </a>
-
         </nav>
 
+        <div class="nav-right">
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                <span data-i18n="nav.status">SISTEMAS EN LÍNEA</span>
+            </div>
 
-        <div class="language-switcher">
-
-            <button
-                class="language-button active"
-                data-language="es"
-                onclick="ContentEngine.setLanguage('es')"
-            >
-                ES
-            </button>
-
-            <span>/</span>
-
-            <button
-                class="language-button"
-                data-language="en"
-                onclick="ContentEngine.setLanguage('en')"
-            >
-                EN
-            </button>
-
+            <div class="language-switcher">
+                <button
+                    class="language-button active"
+                    data-language="es"
+                    onclick="ContentEngine.setLanguage('es')"
+                >
+                    ES
+                </button>
+                <span>/</span>
+                <button
+                    class="language-button"
+                    data-language="en"
+                    onclick="ContentEngine.setLanguage('en')"
+                >
+                    EN
+                </button>
+            </div>
         </div>
-
     </header>
 
-
     <main>
-
         <article
             id="article-content"
             class="article"
         >
-
             <div class="article-loading">
-
-                <span>
-                    INITIALIZING DOCUMENT...
+                <span data-i18n="article.initializing">
+                    INICIALIZANDO DOCUMENTO...
                 </span>
-
             </div>
-
         </article>
-
     </main>
 
-
-    <footer>
-
-        <span>
-            ALONSO — DATA & SYSTEMS
-        </span>
-
-        <span>
-            SYSTEM ONLINE
-        </span>
-
+    <footer class="footer">
+        <span>ALONSO@DATA-SYSTEMS</span>
+        <span data-i18n="footer.built">CONSTRUIDO CON HTML · CSS · JAVASCRIPT · CURIOSIDAD</span>
+        <span>© 2026</span>
     </footer>
 
-
     <script src="js/i18n.js"></script>
-
+    <script src="data/content-data.js"></script>
     <script src="js/content.js"></script>
-
 </body>
-
 </html>

@@ -13,7 +13,7 @@
                 "en": "Exploring whether temporal patterns can improve financial fraud detection."
             },
             "date": "2026-08-19",
-            "image": "assets/images/lab/fraud-detection.jpg",
+            "image": "",
             "slug": "fraud-detection-transformers",
             "tags": [
                 "Python",
@@ -23,9 +23,11 @@
             ],
             "status": "complete",
             "featured": true,
-            "path": "content/lab/fraud-detection-transformers.md"
+            "path": {
+                "es": "content/lab/fraud-detection-transformers.es.md",
+                "en": "content/lab/fraud-detection-transformers.en.md"
+            }
         },
-
         {
             "id": "journal-001",
             "type": "journal",
@@ -39,7 +41,7 @@
                 "en": "Why I decided to turn my portfolio into a place to experiment and document."
             },
             "date": "2026-08-18",
-            "image": "assets/images/journal/laboratory.jpg",
+            "image": "",
             "slug": "construyendo-mi-laboratorio",
             "tags": [
                 "Journal",
@@ -48,9 +50,11 @@
             ],
             "status": "complete",
             "featured": true,
-            "path": "content/journal/construyendo-mi-laboratorio.md"
+            "path": {
+                "es": "content/journal/construyendo-mi-laboratorio.es.md",
+                "en": "content/journal/construyendo-mi-laboratorio.en.md"
+            }
         },
-
         {
             "id": "project-001",
             "type": "project",
@@ -64,7 +68,7 @@
                 "en": "A system for automating processes related to users, courses and data uploads."
             },
             "date": "2026-08-10",
-            "image": "assets/images/projects/moodle.jpg",
+            "image": "",
             "slug": "moodle-management-system",
             "tags": [
                 "Python",
@@ -74,7 +78,10 @@
             ],
             "status": "complete",
             "featured": true,
-            "path": "content/projects/moodle-management-system.md"
+            "path": {
+                "es": "content/projects/moodle-management-system.es.md",
+                "en": "content/projects/moodle-management-system.en.md"
+            }
         }
     ]
 }

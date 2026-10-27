@@ -393,26 +393,68 @@ function executeCommand(
     }
 
 
-    /* open 001 */
+    /* open command */
 
-    if (
-        command === "open 001"
-    ) {
+    if (command.startsWith("open ")) {
 
-        print(`
+        const target = command.replace("open ", "").trim();
+
+        if (target === "001" || target === "exp-001" || target === "fraud-detection-transformers") {
+
+            print(`
 
 Opening EXP-001...
 
-Fraud Detection
-with Transformers
-
+Fraud Detection with Transformers
 ROC-AUC ........ 0.993
 Recall ......... 0.897
 Precision ...... 0.644
 
+Redirecting to article...
+
 `);
 
-        return;
+            setTimeout(() => {
+                window.location.href = "article.html?slug=fraud-detection-transformers";
+            }, 700);
+
+            return;
+
+        } else if (target === "journal-001" || target === "construyendo-mi-laboratorio") {
+
+            print(`
+
+Opening JOURNAL-001...
+Construyendo mi laboratorio digital
+
+Redirecting to article...
+
+`);
+
+            setTimeout(() => {
+                window.location.href = "article.html?slug=construyendo-mi-laboratorio";
+            }, 700);
+
+            return;
+
+        } else if (target === "project-001" || target === "moodle-management-system") {
+
+            print(`
+
+Opening PROJECT-001...
+Sistema de gestión para Moodle
+
+Redirecting to article...
+
+`);
+
+            setTimeout(() => {
+                window.location.href = "article.html?slug=moodle-management-system";
+            }, 700);
+
+            return;
+
+        }
 
     }
 
